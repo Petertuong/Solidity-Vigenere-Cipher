@@ -36,8 +36,10 @@ The biggest conundrum in this challenge (before working with diffusion), is deal
 
 5. `assertEq` doesn't work with type `bytes1`
 
+After having the basic understanding, working with diffusion by transposition in this scenario is fairly easy `(1,2,3,4) -> (3,1,4,2)`. However, one hard thing is to maintain the original space while ignoring the space. Which is very difficult and extremely expensive in solidity, that I believe I should not do it. Therefore, I maintain my right to be lazy and not writing the function for it.
+
 ---
 
 ## Conclusion
 
-After achieving the task, I think (hopefully) I have better understanding of solidity fundamentals. Now I will move on to creating diffusion in the message.
+After achieving the task, I think (hopefully) I have better understanding of solidity fundamentals.

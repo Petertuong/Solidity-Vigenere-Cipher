@@ -10,20 +10,26 @@ contract VigenereTest is Test {
     string public cipherText;
     string public key;
     string public message;
+    string public diffusedText;
 
     function setUp() public {
         vigenere = new Vigenere();
         cipherText = "altdw lhsw gl tg kmurox kxzasow";
+        diffusedText = "tadllwh  sgwtlg m ukxr ozkaxsow";
         message = "hello this is my secret message";
         key = "thisisakey";
     }
 
     function test_encrypt() public {
-        assertEq(vigenere.vigenereOperation(message, key, true), cipherText);
+        assertEq(vigenere.vigenereOperation(message, key, true), diffusedText);
     }
 
     function test_decrypt() public {
         assertEq(vigenere.vigenereOperation(cipherText, key, false), message);
+    }
+
+    function test_diffusion() public {
+        assertEq(string(vigenere.diffuse(bytes("abcde"))), "cadbe");
     }
 
     function test_strLookUp() public view {
